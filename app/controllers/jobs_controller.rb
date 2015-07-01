@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!
   def index
-    @user_jobs = Job.all
+    @jobs = Job.where(user_id: current_user.id)
   end
 
   def new
@@ -18,6 +18,8 @@ class JobsController < ApplicationController
       end
     end
   end
+
+  
 
   private
 
