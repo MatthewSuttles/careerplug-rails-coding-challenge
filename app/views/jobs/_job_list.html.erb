@@ -1,0 +1,21 @@
+<div id="job_list">
+    <h1>All jobs</h1>
+    <% @jobs.each do |job| %>
+        <h4><%= job.name %></h4>
+        <p><%= job.description.html_safe %></p>
+        <div id="<%= job.id%>_comment_form" style="display: none">
+          <textarea class="comment_description" id="<%=job.id%>_comment_description"></textarea>
+          <button class="submit_comment" data-id="<%= job.id%>">Submit</button>
+        </div>
+      <button class="add_comment" id="<%= job.id%>">Add Comment</button>
+      <div id="job_<%=job.id%>_comments">
+        <h5>Comments</h5>
+
+        <%job.comments.each do |comment|%>
+            <%= render partial: "comments/comments", locals:{ job_id: job.id, comment: comment} %>
+        <% end %>
+      </div>
+      <hr/>
+    <% end %>
+
+</div>

@@ -18,4 +18,5 @@ class Job < ActiveRecord::Base
   validates_presence_of :name, :description, :status, :employment_type
 
   has_one :user
+  has_many :comments
 end

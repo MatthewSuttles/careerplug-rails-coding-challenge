@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'jobs#index'
-
+  post "comments/ajax_add_comment" => "comments#ajax_add_comment"
   resources :jobs
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

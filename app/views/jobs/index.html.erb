@@ -1,5 +1,9 @@
-<h1>All jobs</h1>
-<% @jobs.each do |job| %>
-  <h4><%= job.name %></h4>
-  <p><%= job.description.html_safe %></p>
+
+<% if @result_count %>
+    <div>
+      Your search returned <%= @result_count%> results
+      <%= link_to "Clear", jobs_path %>
+    </div>
 <% end %>
+
+<%= render partial: "job_list"%>

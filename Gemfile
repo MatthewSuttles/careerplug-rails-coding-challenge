@@ -11,6 +11,7 @@ gem 'formtastic'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'formtastic-bootstrap'
 gem 'devise'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'byebug'
