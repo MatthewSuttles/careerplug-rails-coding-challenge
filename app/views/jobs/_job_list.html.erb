@@ -10,9 +10,8 @@
       <button class="add_comment" id="<%= job.id%>">Add Comment</button>
       <div id="job_<%=job.id%>_comments">
         <h5>Comments</h5>
-
         <%job.comments.each do |comment|%>
-            <%= render partial: "comments/comments", locals:{ job_id: job.id, comment: comment} %>
+            <%= render partial: "comments/comments", locals:{ comment: comment} %>
         <% end %>
       </div>
       <hr/>

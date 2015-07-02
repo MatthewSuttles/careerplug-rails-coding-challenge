@@ -25,7 +25,6 @@ class JobsController < ApplicationController
     end
   end
 
-
   private
 
   def permitted_params
