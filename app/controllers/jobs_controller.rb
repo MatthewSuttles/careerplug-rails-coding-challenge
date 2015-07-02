@@ -1,12 +1,8 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!
   def index
-    if params[:search]
-      @jobs = Job.where("jobs.name Like ?", "%#{params[:search]}%").includes(:comments)
-      @result_count = @jobs.count
-    else
-      @jobs = Job.where(user_id: current_user.id).includes(:comments)
-    end
+      @jobs = current_user.jobs.with_search(params[:search]).includes(:comments)
+      @result_count = @jobs.count if params[:search]
   end
 
   def new

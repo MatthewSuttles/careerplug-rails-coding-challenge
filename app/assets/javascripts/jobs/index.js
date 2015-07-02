@@ -2,17 +2,12 @@
  * Created by matthew on 7/1/15.
  */
 $(document).ready(function(){
-    $('button').click(function(event){
-        if ($(this).attr('class') == "add_comment") {
-           var id = event.target.id
-           var $id = $("#" + id)
-           $id.hide()
-            $('#'+ id +'_comment_form').show()
-       }
+    $('button.add_comment').click(function(event){
+            $(event.target).hide()
+            $('#'+ event.target.id +'_comment_form').show()
     });
 
-    $('button').click(function(event){
-       if($(this).attr('class') == "submit_comment"){
+    $('button.submit_comment').click(function(event){
             var job_id = $(this).data("id")
             var description = $('#' + job_id + '_comment_description').val()
            $.ajax({
@@ -27,6 +22,5 @@ $(document).ready(function(){
                    $('#'+ job_id +'_comment_form').hide()
                }
            });
-       }
     });
 });

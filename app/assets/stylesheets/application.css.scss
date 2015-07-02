@@ -17,3 +17,29 @@
 @import "bootstrap";
 @import "partials/*";
 
+.comment_time{
+  color:gray;
+  padding-left: 10px;
+}
+.comments{
+  border-bottom: thin;
+  padding-bottom: 2px;
+
+}
+
+button.add_comment{
+  font-size: 10px;
+  margin-top: 7px;
+  margin-left: 6px;
+}
+
+.comment_header{
+  float: left;
+}
+.comment_description{
+  float:left;
+}
+
+button.submit_comment{
+  font-size: 10px;
+}

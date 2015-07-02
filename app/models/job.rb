@@ -19,4 +19,7 @@ class Job < ActiveRecord::Base
 
   has_one :user
   has_many :comments
+
+  scope :with_search ,->(search) {where("jobs.name Like ?", "%#{search}%") unless search.blank?}
+
 end
